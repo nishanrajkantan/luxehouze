@@ -1,0 +1,121 @@
+.featured {
+  flex: 10;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  padding: 10px;
+  height: 200px;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .bottom {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+
+    .featuredChart {
+      padding: 1px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      color: rgb(0, 0, 0);
+    }
+    
+    .line {
+      font-family: sans-serif;
+      text-align: center;
+      height: 120px;
+    }
+
+    .donut {
+      font-family: sans-serif;
+      text-align: left;
+      height: 120px;
+    }
+
+    .bar {
+      font-family: sans-serif;
+      text-align: left;
+    }
+
+    .amount {
+      font-size: 30px;
+    }
+
+    .desc {
+      font-weight: 500;
+      font-size: 10;
+      margin-top: 0.1rem;
+      color: rgb(130, 130, 130);
+      flex-direction: row;
+
+      .left{
+        float: left;
+      }
+
+      .right{
+        float: right;
+        
+        .percentage {
+          display: flex;
+          align-items: left;
+          font-size: 14px;
+          &.positive {
+            color: green;
+          }
+          &.negative {
+            color: red;
+          }
+        }
+      }
+    }
+
+    .summary {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .item {
+        text-align: center;
+
+        .itemTitle {
+          font-size: 14px;
+          color: gray;
+        }
+
+        .itemResult {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          font-size: 14px;
+
+          &.positive {
+            color: green;
+          }
+
+          &.negative {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
