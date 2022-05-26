@@ -1,11 +1,13 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
+import APItable from "../../components/table/APITable";
 import "./home.scss";
 import Widget from "../../components/widget/Widget";
 import Featured1 from "../../components/featured/Featured1";
 import Featured2 from "../../components/featured/Featured2";
 import Featured3 from "../../components/featured/Featured3";
 import Featured4 from "../../components/featured/Featured4";
+import Featured5 from "../../components/featured/Featured5"
 import Table from "../../components/table/Table";
 
 const Home = () => {
@@ -31,12 +33,9 @@ const Home = () => {
           {/* <Featured5 /> */}
           
         </div>
-        {/* <div className="charts">
-          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
-        </div> */}
         <div className="listContainer">
           <div className="listTitle">Watch Models' Deals</div>
-          <Table />
+          <APItable />
         </div>
       </div>
     </div>
