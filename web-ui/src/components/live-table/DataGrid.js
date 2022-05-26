@@ -6,11 +6,11 @@ import axios from 'axios';
 const columns = [
   { field: 'message_id', headerName: 'Message ID' , width: 120, headerAlign: 'center', headerClassName: 'super-app-theme--header', hide:true},
   { field: 'timestamp', headerName: 'Timestamp' , width: 110, type: 'dateTime', headerAlign: 'center', headerClassName: 'super-app-theme--header'},
-  { field: 'group_id', headerName: 'Group ID' , width: 230, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
-  { field: 'sender_id', headerName: 'Sender ID' , width: 250, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
+  { field: 'group_id', headerName: 'Group ID' , width: 270, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
+  { field: 'sender_id', headerName: 'Sender ID' , width: 293, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
   { field: 'sender_name', headerName: 'Sender Name' , width: 150, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
-  { field: 'message', headerName: 'Message' , width: 300, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
-  { field: 'image_url', headerName: 'Image URL' , width: 255, headerAlign: 'center', headerClassName: 'super-app-theme--header'}
+  { field: 'message', headerName: 'Message' , width: 400, headerAlign: 'center', headerClassName: 'super-app-theme--header'},
+  { field: 'image_url', headerName: 'Image URL' , width: 400, headerAlign: 'center', headerClassName: 'super-app-theme--header'}
 ]
 
 function DataGrid1 () {

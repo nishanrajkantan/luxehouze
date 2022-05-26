@@ -58,7 +58,7 @@ const Featured2 = () => {
     <div className="bottom">
       <div className="featuredChart"></div>
         <div className="line">
-          <Line data={data} options={options} height={120} width={240}/>
+          <Line data={data} options={options} height={80} width={240}/>
         </div>
       </div>
     </div>
