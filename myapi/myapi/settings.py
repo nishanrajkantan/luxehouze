@@ -25,7 +25,7 @@ SECRET_KEY = 'fwx@y29l8_!354zx^$km%=9^m!arbv1n)h%eeq*qm0c1&(1t&6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.151', '127.0.0.1','192.168.0.206','192.168.0.111','175.142.140.0']
+ALLOWED_HOSTS = ['192.168.0.151', '127.0.0.1','192.168.0.206','192.168.0.111','175.142.140.0','175.142.133.179']
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'luxehouze_db',
         'USER': 'postgres',
         'PASSWORD': 'web@1234',
-        'HOST': '175.142.140.0',
+        'HOST': '192.168.0.206',
         'PORT': '5432',
     }
 }
