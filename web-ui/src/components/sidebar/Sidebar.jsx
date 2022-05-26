@@ -46,10 +46,12 @@ const Sidebar = () => {
             <span>Brands</span>
           </li>
           <p className="title">SERVICE</p>
-          <li>
-            <ChatIcon className="icon" />
-            <span>Live Messages</span>
-          </li>
+            <Link to="/live" style={{ textDecoration: "none" }}>
+              <li>
+                <ChatIcon className="icon" />
+                <span>Live Messages</span>
+              </li>
+            </Link>
           <p className="title">USER</p>
             <Link to="/users" style={{ textDecoration: "none" }}>
               <li>
