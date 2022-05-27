@@ -3,3 +3,4 @@ psycopg2
 django_unixdatetimefield
 pytz
 requests
+django-cors-headers
