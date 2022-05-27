@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('message', views.add_message),
-    path('<str:message_text>', views.get_message),
+    path('<int:m_id>', views.get_message),
+    path('latest_message', views.get_latest_message),
 ]
