@@ -26,7 +26,13 @@ def get_latest_message(request):
             message = Message.objects.last()
             utc_time = datetime.fromtimestamp(message.message_timestamp, timezone.utc)
             message.message_timestamp = utc_time.astimezone().strftime("%H:%M:%S %p")
-            response = json.dumps([{ 'message_id': message.id, 'message': message.message, 'timestamp' : message.message_timestamp, 'group_id' : message.group_id, 'sender_id' : message.sender_id, 'sender_name' : message.sender_name, 'image_url': message.image_url}])
+            response = json.dumps([{ 'message_id': message.id,
+                                     'message': message.message,
+                                     'timestamp' : message.message_timestamp,
+                                     'group_id' : message.group_id,
+                                     'sender_id' : message.sender_id,
+                                     'sender_name' : message.sender_name,
+                                     'image_url': message.image_url}])
 
         except:
             response = json.dumps([{ 'Error': 'No latest message'}])
