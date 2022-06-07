@@ -1,9 +1,6 @@
 from django.db import models
 
 class Message(models.Model):
-    # sender = models.IntegerField()
-    # text = models.CharField(max_length=200)
-    # group = models.CharField(max_length=200)
 
     group_id = models.TextField(null = True, blank = True)
     sender_id = models.TextField(null = True, blank = True)
@@ -15,6 +12,7 @@ class Message(models.Model):
     message_id = models.TextField(null = True, blank = True)
     message_timestamp = models.IntegerField(null = True, blank = True)
     message = models.TextField(null = True, blank = True)
+    message_type = models.TextField(null = True, blank = True)
 
     image_url = models.TextField(null = True, blank = True)
     image_mimetype = models.TextField( null = True, blank = True)
@@ -25,3 +23,23 @@ class Message(models.Model):
     reply_message_id = models.TextField(null = True, blank = True)
     reply_message_sender_id = models.TextField(null = True, blank = True)
     reply_message_quote = models.TextField(null = True, blank = True)
+
+class Listing(models.Model):
+
+    sender_number = models.TextField(null = True, blank = True)
+    group_id = models.TextField(null = True, blank = True)
+    message_id = models.TextField(null = True, blank = True)
+    listing_type = models.TextField(null = True, blank = True)
+    watch_price = models.TextField(null = True, blank = True)
+    watch_condition = models.TextField(null = True, blank = True)
+    watch_year = models.IntegerField(null = True, blank = True)
+    datetime = models.DateTimeField(null = True, blank = True)
+    state_name = models.TextField(null = True, blank = True)
+    watch_brand = models.TextField(null = True, blank = True)
+    watch_model = models.TextField(null = True, blank = True)
+
+class Watch(models.Model):
+    model_name = models.TextField(null = True, blank = True)
+    brand = models.TextField(null = True, blank = True)
+    avg_price = models.IntegerField(null = True, blank = True)
+    total_listings = models.IntegerField(null = True, blank = True)
