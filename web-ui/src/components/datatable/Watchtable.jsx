@@ -61,7 +61,7 @@ useEffect(() => {
     const interval = setInterval(() => {
       axios
         .get(
-          'http://instabi.datamicron.com:8235/watch_info/5164r',
+          'http://instabi.datamicron.com:8235/get_all_watch_info',
           { crossDomain: true })
         .then(res => {            
             setTableData(res.data);
