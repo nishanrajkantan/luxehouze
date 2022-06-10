@@ -24,4 +24,5 @@ urlpatterns = [
     path('message', views.add_message),
     path('<int:m_id>', views.get_message),
     path('latest_message', views.get_latest_message),
+    path('<str:watch_model>', views.get_watch_info),
 ]
