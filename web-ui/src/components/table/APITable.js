@@ -1,54 +1,118 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Coin from './Coin';
+import { DataGrid } from '@mui/x-data-grid'
 
-function APItable() {
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('');
-  
+const watchColumns = [
+  {
+    field: "brand",
+    headerName: "Brand",
+    width: 200,
+  },
+  {
+    field: "model_name",
+    headerName: "Model",
+    width: 150,
+  },
 
-  useEffect(() => {
+  {
+    field: "avg_price",
+    headerName: "Average price",
+    width: 150,
+  },
+  {
+    field: "watch_price",
+    headerName: "Watch Price",
+    width: 100,
+  },
+  {
+    field: "margin_difference",
+    headerName: "Margin",
+    width: 100,
+  },  {
+    field: "group_id",
+    headerName: "Group ID",
+    width: 150,
+  },  {
+    field: "sender_name",
+    headerName: "Sender Name",
+    width: 150,
+  },  {
+    field: "message",
+    headerName: "Message",
+    width: 250,
+  },
+  {
+    field: "replied",
+    headerName: "Replied",
+    width: 150,
+  },
+  {
+    field: "datetime",
+    headerName: "Datetime",
+    width: 150,
+  },
+]
+
+
+function APITable(){
+
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+
+            <div
+              className="deleteButton"
+              onClick={() => handleDelete(params.row.id)}
+            >
+              Reply
+            </div>
+          </div>
+        );
+      },
+    },
+  ];
+
+const [watchRows, setTableData] = useState([])
+
+useEffect(() => {
     const interval = setInterval(() => {
       axios
         .get(
-          'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false',
+          'http://instabi.datamicron.com:8235/get_all_deals_info',
           { crossDomain: true })
-        .then(res => {
-          setCoins(res.data);
+        .then(res => {            
+            setTableData(res.data);
           console.log(res.data);
         })
         .catch(error => console.log(error));
-    }, 5000);
+    }, 500);
   }, []);
 
-  const handleChange = e => {
-    setSearch(e.target.value);
-  };
+console.log(watchRows)
 
-  const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
+const handleDelete = (id) => {
+  setTableData(watchRows.filter((item) => item.id !== id));
+};
 
   return (
-    <div className='coin-app'>
-      {filteredCoins.map(coin => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
-            update={coin.last_updated}
-          />
-        );
-      })}
+    <div className="watchtable">
+      <DataGrid
+        className="datagrid"
+        rows={watchRows}
+        columns={watchColumns.concat(actionColumn)}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        checkboxSelection
+      />
     </div>
   );
+
 }
 
-export default APItable;
+export default APITable;

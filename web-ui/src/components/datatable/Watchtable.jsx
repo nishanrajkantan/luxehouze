@@ -10,6 +10,14 @@ const watchColumns = [
     field: "brand",
     headerName: "Brand",
     width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img} alt="avatar" />
+          {params.row.brand}
+        </div>
+      );
+    },
   },
   {
     field: "model_name",
@@ -61,7 +69,7 @@ useEffect(() => {
     const interval = setInterval(() => {
       axios
         .get(
-          'http://instabi.datamicron.com:8235/watch_info/5164r',
+          'http://instabi.datamicron.com:8235/get_all_watch_info',
           { crossDomain: true })
         .then(res => {            
             setTableData(res.data);
