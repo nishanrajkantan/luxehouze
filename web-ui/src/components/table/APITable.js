@@ -40,6 +40,7 @@ const watchColumns = [
     headerName: "Margin",
     headerAlign: 'center',
     headerClassName: 'super-app-theme--header',
+    align: 'center',
     width: 100,
   },  {
     field: "group_id",
@@ -58,7 +59,7 @@ const watchColumns = [
     field: "message",
     headerName: "Message",
     headerAlign: 'center',
-    width: 250,
+    width: 300,
     headerClassName: 'super-app-theme--header'
   },
   {
@@ -73,6 +74,7 @@ const watchColumns = [
     field: "datetime",
     headerName: "Datetime",
     headerAlign: 'center',
+    align: 'center',
     width: 250,
     headerClassName: 'super-app-theme--header'
   },
@@ -85,7 +87,7 @@ function APITable(){
     {
       field: "action",
       headerName: "Action",
-      width: 265,
+      width: 235,
       headerAlign: 'center',
       headerClassName: 'super-app-theme--header',
       align:'center',
@@ -139,10 +141,9 @@ const handleDelete = (id) => {
     <div className="watchtable">
       <Box
             sx={{
-              height: 500,
+              height: 530,
               width: '100%',
-              '& .super-app-theme--header': {
-                backgroundColor: 'rgb(175, 206, 71, 0.5)',
+              '& .super-app-theme--header': {backgroundColor: 'rgb(175, 206, 71, 0.5)',
               },
             }}
       >

@@ -1,6 +1,7 @@
 import "./watchtable.scss";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
+import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid'
 import axios from 'axios';
 
@@ -10,30 +11,34 @@ const watchColumns = [
     field: "brand",
     headerName: "Brand",
     width: 230,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.brand}
-        </div>
-      );
-    },
+    // renderCell: (params) => {
+    //   return (
+    //     <div className="cellWithImg">
+    //       <img className="cellImg" src={params.row.img} alt="avatar" />
+    //       {params.row.brand}
+    //     </div>
+    //   );
+    // },
+    headerClassName: 'super-app-theme--header',
   },
   {
     field: "model_name",
     headerName: "Model",
     width: 230,
+    headerClassName: 'super-app-theme--header',
   },
 
   {
     field: "avg_price",
     headerName: "Average price",
     width: 150,
+    headerClassName: 'super-app-theme--header',
   },
   {
     field: "total_listings",
     headerName: "Total Listings",
     width: 150,
+    headerClassName: 'super-app-theme--header',
   },
 ]
 
@@ -93,14 +98,23 @@ const handleDelete = (id) => {
           Add New
         </Link>
       </div>
-      <DataGrid
-        className="datagrid"
-        rows={watchRows}
-        columns={watchColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        checkboxSelection
-      />
+      <Box
+            sx={{
+              height: 530,
+              width: '100%',
+              '& .super-app-theme--header': {backgroundColor: 'rgb(175, 206, 71, 0.5)',
+              },
+            }}
+      >
+        <DataGrid
+          className="datagrid"
+          rows={watchRows}
+          columns={watchColumns.concat(actionColumn)}
+          pageSize={20}
+          rowsPerPageOptions={[20]}
+          // checkboxSelection
+        />
+      </Box>
     </div>
   );
 
