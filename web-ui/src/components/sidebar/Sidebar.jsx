@@ -5,6 +5,7 @@ import StoreIcon from "@mui/icons-material/Store";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ChatIcon from '@mui/icons-material/Chat';
+import WatchIcon from '@mui/icons-material/Watch';
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
@@ -45,6 +46,12 @@ const Sidebar = () => {
             <StoreIcon className="icon" />
             <span>Brands</span>
           </li>
+          <Link to="/addwatch" style={{ textDecoration: "none" }}>
+              <li>
+                <WatchIcon className="icon" />
+                <span>Watches</span>
+              </li>
+            </Link>
           <p className="title">SERVICE</p>
             <Link to="/live" style={{ textDecoration: "none" }}>
               <li>
