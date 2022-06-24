@@ -30,7 +30,7 @@ class Listing(models.Model):
     group_id = models.TextField(null = True, blank = True)
     message_id = models.TextField(null = True, blank = True)
     listing_type = models.TextField(null = True, blank = True)
-    watch_price = models.TextField(null = True, blank = True)
+    watch_price = models.IntegerField(null = True, blank = True)
     watch_condition = models.TextField(null = True, blank = True)
     watch_year = models.IntegerField(null = True, blank = True)
     datetime = models.DateTimeField(null = True, blank = True)
@@ -38,8 +38,25 @@ class Listing(models.Model):
     watch_brand = models.TextField(null = True, blank = True)
     watch_model = models.TextField(null = True, blank = True)
 
+
 class Watch(models.Model):
+
     model_name = models.TextField(null = True, blank = True)
     brand = models.TextField(null = True, blank = True)
     avg_price = models.IntegerField(null = True, blank = True)
     total_listings = models.IntegerField(null = True, blank = True)
+    name_variations = models.TextField(null = True, blank = True)
+
+class Deal(models.Model):
+
+    model_name = models.TextField(null = True, blank = True)
+    brand = models.TextField(null = True, blank = True)
+    avg_price = models.IntegerField(null = True, blank = True)
+    watch_price = models.IntegerField(null = True, blank = True)
+    margin_difference = models.IntegerField(null = True, blank = True)
+    group_id = models.TextField(null = True, blank = True)
+    sender_id = models.TextField(null = True, blank = True)
+    sender_name = models.TextField(null = True, blank = True)
+    message = models.TextField(null = True, blank = True)
+    replied = models.BooleanField(default=False)
+    datetime = models.DateTimeField(null = True, blank = True)
