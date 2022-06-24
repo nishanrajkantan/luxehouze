@@ -1,0 +1,18 @@
+
+open putty
+paste 
+"ec2-52-77-251-15.ap-southeast-1.compute.amazonaws.com" in host name
+import private key in C:\django_sample_api named "datamicronteamv2.ppk" 
+login as "ubuntu"
+conda activate luxehouze
+
+backend server:
+cd C:\django_sample_api\myapi
+python manage.py runserver 0.0.0.0:8080
+
+frontend server
+cd C:\django_sample_api\web-ui
+npm start
+
+check tasks & ports running
+sudo ss -ltn
