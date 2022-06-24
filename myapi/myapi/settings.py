@@ -25,9 +25,6 @@ SECRET_KEY = 'fwx@y29l8_!354zx^$km%=9^m!arbv1n)h%eeq*qm0c1&(1t&6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.151', '127.0.0.1','192.168.0.206','192.168.0.111','175.142.140.0','175.142.133.179', '192.168.0.35','instabi.datamicron.com','localhost:3001']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'myapp'
+    'myapp',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -126,4 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+ALLOWED_HOSTS = ['192.168.0.151', '127.0.0.1', '192.168.0.35','instabi.datamicron.com','localhost:3001']
 CORS_ORIGIN_ALLOW_ALL = True

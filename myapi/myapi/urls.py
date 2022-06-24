@@ -24,5 +24,8 @@ urlpatterns = [
     path('message', views.add_message),
     path('<int:m_id>', views.get_message),
     path('latest_message', views.get_latest_message),
-    path('<str:watch_model>', views.get_watch_info),
+    path('watch_info/<str:watch_model>', views.get_specific_watch_info),
+    path('get_all_watch_info', views.get_all_watch_info),
+    path('get_all_deals_info', views.get_all_deals_info),
+    path('get_listing_info/<int:l_id>', views.get_listing_info),
 ]
