@@ -26,6 +26,7 @@ class Message(models.Model):
 
 class Listing(models.Model):
 
+    message = models.TextField(null = True, blank = True)
     sender_number = models.TextField(null = True, blank = True)
     group_id = models.TextField(null = True, blank = True)
     message_id = models.TextField(null = True, blank = True)
@@ -42,8 +43,13 @@ class Listing(models.Model):
 class Watch(models.Model):
 
     model_name = models.TextField(null = True, blank = True)
+    model_number = models.TextField(null = True, blank = True)
+    series = models.TextField(null = True, blank = True)
+    year = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length=10, null = True, blank = True)
     brand = models.TextField(null = True, blank = True)
     avg_price = models.IntegerField(null = True, blank = True)
+    median_price = models.IntegerField(null = True, blank = True)
     total_listings = models.IntegerField(null = True, blank = True)
     name_variations = models.TextField(null = True, blank = True)
 
